@@ -14,9 +14,35 @@ var counter = {
   "u" : 0,  "v" : 0,  "w" : 0,  "x" : 0,
   "y" : 0,  "z" : 0
 }
-
+let count = 0;
 function countLetters(counter, sample_text){
-  // FIX ME
+  sample_text = sample_text.slice(0,sample_text.length-1);
+    if(sample_text.length === 0){
+      console.log('boom')
+      return
+    }
+   
+    countLetters(counter, sample_text)
+    count++
+    console.log(count)
+    console.log(sample_text)
+    let check = sample_text.charAt(count-1)
+    let checkLower = check.toLowerCase();
+    console.log(checkLower)
+    
+    for(keys in counter){
+      if(keys === checkLower){
+        counter[keys] = counter[keys]+1
+      }
+    }
+    
+    
+    
+   
+   
+    
+  
+  
 }
 
 $(document).ready(function(){
